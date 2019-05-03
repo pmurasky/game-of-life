@@ -28,6 +28,17 @@ class NeighborFinderTest {
     }
 
     @Test
+    public void findNeighborsForTopMiddleCellOf3x3Board(){
+        Board board = boardCreator.create(ALIVE, DEAD, DEAD,
+                                          DEAD, ALIVE, ALIVE,
+                                          DEAD, DEAD, ALIVE);
+
+        int actual = neighborFinder.findLiveNeighborCount(board, new Coordinate(0,1));
+
+        assertThat(actual).isEqualTo(3);
+    }
+
+    @Test
     public void findNeighborsForTopLeftCellOf3x3Board(){
         Board board = boardCreator.create(ALIVE, DEAD, DEAD,
                                           DEAD, ALIVE, ALIVE,
