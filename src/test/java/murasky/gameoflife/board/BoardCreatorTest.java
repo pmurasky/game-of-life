@@ -1,8 +1,6 @@
-package murasky.gameoflife.rule.board;
+package murasky.gameoflife.board;
 
 import murasky.gameoflife.CellState;
-import murasky.gameoflife.board.Board;
-import murasky.gameoflife.board.BoardCreator;
 import org.junit.jupiter.api.Test;
 
 import static murasky.gameoflife.CellState.ALIVE;
