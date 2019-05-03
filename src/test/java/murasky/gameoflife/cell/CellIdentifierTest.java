@@ -21,6 +21,16 @@ class CellIdentifierTest {
     }
 
     @Test
+    public void verifyCoordinateNeighborsForTopMiddleCell(){
+        Coordinate coordinate = new Coordinate(0,1);
+        List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
+
+        Assertions.assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(0,-1),
+                new OffsetCoordinate(0,1), new OffsetCoordinate(-1,-1), new OffsetCoordinate(-1,0),
+                new OffsetCoordinate(-1,1));
+    }
+
+    @Test
     public void verifyCoordinateNeighborsForMiddleCell(){
         Coordinate coordinate = new Coordinate(1,1);
         List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
