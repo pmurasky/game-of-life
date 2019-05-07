@@ -42,13 +42,25 @@ public class CellIdentifier {
             return Arrays.asList(new OffsetCoordinate(-1,0),
                     new OffsetCoordinate(-1,-1), new OffsetCoordinate(0,-1), new OffsetCoordinate(1,-1),
                     new OffsetCoordinate(1,0));
-        } if (coordinate.getX() == lengthOfSide-1 && coordinate.getY() == 0){
+        } if (isLeftBottomCorner(coordinate, lengthOfSide)){
             return Arrays.asList(new OffsetCoordinate(-1,0),
                     new OffsetCoordinate(-1,1), new OffsetCoordinate(0,1));
+        } if(isCellBottomEdge(coordinate, lengthOfSide)){
+            return Arrays.asList(new OffsetCoordinate(-1,-1),
+                    new OffsetCoordinate(-1,0), new OffsetCoordinate(-1,1), new OffsetCoordinate(0,-1),
+                    new OffsetCoordinate(0,1));
         }
 
 
         return null;
+    }
+
+    private boolean isCellBottomEdge(Coordinate coordinate, int lengthOfSide) {
+        return coordinate.getX() == lengthOfSide-1 && (coordinate.getY() > 0 && coordinate.getY() < lengthOfSide);
+    }
+
+    private boolean isLeftBottomCorner(Coordinate coordinate, int lengthOfSide) {
+        return coordinate.getX() == lengthOfSide-1 && coordinate.getY() == 0;
     }
 
     private boolean isTopRightCorner(Coordinate coordinate, int lengthOfSide) {
