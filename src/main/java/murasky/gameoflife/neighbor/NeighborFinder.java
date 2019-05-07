@@ -17,14 +17,11 @@ public class NeighborFinder {
         List<OffsetCoordinate> neighborsOffsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, board.getCells().length);
 
         for (OffsetCoordinate offsetCoordinate : neighborsOffsetCoordinates) {
+            System.out.println(offsetCoordinate.getX() +":"+offsetCoordinate.getY());
             if (board.getCells()[coordinate.getX()+offsetCoordinate.getX()][coordinate.getY()+offsetCoordinate.getY()].equals(CellState.ALIVE)){
                     numberOfLiveNeighbor++;
             }
         }
         return numberOfLiveNeighbor;
-    }
-
-    private boolean notCurrentCell(Coordinate coordinate, int xWithOffset, int yWithOffset){
-        return !(coordinate.getX() == xWithOffset && coordinate.getY() == yWithOffset);
     }
 }

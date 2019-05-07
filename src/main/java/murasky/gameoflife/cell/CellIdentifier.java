@@ -10,19 +10,27 @@ public class CellIdentifier {
     public List<OffsetCoordinate> findNeighborsOffsetCoordinates(Coordinate coordinate, int lengthOfSide) {
 
         if (isCellLeftTopCorner(coordinate)){
+            System.out.println("LeftTopCorner");
             return Arrays.asList(new OffsetCoordinate(0,1),
                     new OffsetCoordinate(1,0), new OffsetCoordinate(1,1));
         }
+        if (coordinate.getX() == 0 && coordinate.getY() == lengthOfSide-1){
+            System.out.println("RightTopCorner");
+            return  Arrays.asList(new OffsetCoordinate(0,-1),
+                    new OffsetCoordinate(1,-1), new OffsetCoordinate(1,0));
+        }
+        if (isCellTopEdge(coordinate, lengthOfSide)) {
+            System.out.println("TopEdge");
+            return Arrays.asList(new OffsetCoordinate(0,-1),
+                    new OffsetCoordinate(0,1), new OffsetCoordinate(1,-1), new OffsetCoordinate(1,0),
+                    new OffsetCoordinate(1,1));
+        }
         if (isCellMiddle(coordinate)){
+            System.out.println("Middle");
             return Arrays.asList(new OffsetCoordinate(-1,-1),
                     new OffsetCoordinate(-1,0), new OffsetCoordinate(-1,1),
                     new OffsetCoordinate(0,-1), new OffsetCoordinate(0,1), new OffsetCoordinate(1,-1),
                     new OffsetCoordinate(1,0), new OffsetCoordinate(1,1));
-        }
-        if (isCellTopEdge(coordinate, lengthOfSide)) {
-            return Arrays.asList(new OffsetCoordinate(0,-1),
-                    new OffsetCoordinate(0,1), new OffsetCoordinate(1,-1), new OffsetCoordinate(1,0),
-                    new OffsetCoordinate(1,1));
         }
 
 

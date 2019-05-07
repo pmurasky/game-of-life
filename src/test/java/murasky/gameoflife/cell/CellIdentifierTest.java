@@ -31,6 +31,15 @@ class CellIdentifierTest {
     }
 
     @Test
+    public void verifyCoordinateNeighborsForTopRightCell(){
+        Coordinate coordinate = new Coordinate(0,2);
+        List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
+
+        Assertions.assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(0,-1),
+                new OffsetCoordinate(1,-1), new OffsetCoordinate(1,0));
+    }
+
+    @Test
     public void verifyCoordinateNeighborsForMiddleCell(){
         Coordinate coordinate = new Coordinate(1,1);
         List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
@@ -40,7 +49,4 @@ class CellIdentifierTest {
                 new OffsetCoordinate(0,-1), new OffsetCoordinate(0,1), new OffsetCoordinate(1,-1),
                 new OffsetCoordinate(1,0), new OffsetCoordinate(1,1));
     }
-
-
-
 }
