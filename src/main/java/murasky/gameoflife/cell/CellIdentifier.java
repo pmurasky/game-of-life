@@ -32,6 +32,11 @@ public class CellIdentifier {
                     new OffsetCoordinate(0,-1), new OffsetCoordinate(0,1), new OffsetCoordinate(1,-1),
                     new OffsetCoordinate(1,0), new OffsetCoordinate(1,1));
         }
+        if ((coordinate.getX() > 0 && coordinate.getX() < lengthOfSide) && coordinate.getY() ==0){
+            return Arrays.asList(new OffsetCoordinate(-1,0),
+                    new OffsetCoordinate(-1,1), new OffsetCoordinate(0,1), new OffsetCoordinate(1,0),
+                    new OffsetCoordinate(1,1));
+        }
 
 
         return null;
