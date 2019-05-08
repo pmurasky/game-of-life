@@ -1,11 +1,11 @@
 package murasky.gameoflife.board;
 
 import murasky.gameoflife.CellState;
+import murasky.gameoflife.assertion.BoardAssert;
 import org.junit.jupiter.api.Test;
 
 import static murasky.gameoflife.CellState.ALIVE;
 import static murasky.gameoflife.CellState.DEAD;
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class BoardCreatorTest {
 
@@ -17,7 +17,7 @@ public class BoardCreatorTest {
 
         Board actualBoard = boardCreator.create(ALIVE, DEAD, DEAD, ALIVE);
 
-        assertThat(actualBoard).isEqualToComparingFieldByField(expectedBoard);
+        BoardAssert.assertThat(actualBoard).boardIsEqual(expectedBoard);
     }
 
     @Test
@@ -32,6 +32,6 @@ public class BoardCreatorTest {
                                                 DEAD, ALIVE, ALIVE,
                                                 DEAD, DEAD, ALIVE);
 
-        assertThat(actualBoard).isEqualToComparingFieldByField(expectedBoard);
+        BoardAssert.assertThat(actualBoard).boardIsEqual(expectedBoard);
     }
 }
