@@ -3,6 +3,7 @@ package murasky.gameoflife;
 import com.ford.game.common.GameOfLifeBoard;
 import com.ford.game.common.flife.framework.GameOfLifeStringProfiler;
 import murasky.gameoflife.board.Board;
+import murasky.gameoflife.board.BoardConverter;
 import murasky.gameoflife.board.BoardNextStateGenerator;
 import murasky.gameoflife.neighbor.NeighborFinder;
 import murasky.gameoflife.rule.ConwaysRule;
@@ -13,7 +14,7 @@ public class GamePerformance extends GameOfLifeStringProfiler<Board> {
 
     @Override
     protected GameOfLifeBoard convertToBoard(Board board) {
-        return null;
+        return BoardConverter.convertBoardToGameOfLifeBoard(board);
     }
 
     @Override
@@ -23,6 +24,6 @@ public class GamePerformance extends GameOfLifeStringProfiler<Board> {
 
     @Override
     protected Board convertFromBoard(GameOfLifeBoard gameOfLifeBoard) {
-        return null;
+        return BoardConverter.convertGameOfLifeBoardToBoard(gameOfLifeBoard);
     }
 }
