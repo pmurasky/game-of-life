@@ -1,11 +1,11 @@
 package murasky.gameoflife.board;
 
-import murasky.gameoflife.CellState;
+import murasky.gameoflife.cell.CellState;
 import murasky.gameoflife.assertion.BoardAssert;
 import org.junit.jupiter.api.Test;
 
-import static murasky.gameoflife.CellState.ALIVE;
-import static murasky.gameoflife.CellState.DEAD;
+import static murasky.gameoflife.cell.CellState.ALIVE;
+import static murasky.gameoflife.cell.CellState.DEAD;
 
 public class BoardCreatorTest {
 

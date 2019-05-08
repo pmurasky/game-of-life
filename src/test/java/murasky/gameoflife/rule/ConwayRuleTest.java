@@ -1,11 +1,11 @@
 package murasky.gameoflife.rule;
 
-import murasky.gameoflife.CellState;
+import murasky.gameoflife.cell.CellState;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static murasky.gameoflife.CellState.ALIVE;
-import static murasky.gameoflife.CellState.DEAD;
+import static murasky.gameoflife.cell.CellState.ALIVE;
+import static murasky.gameoflife.cell.CellState.DEAD;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ConwayRuleTest {
@@ -13,18 +13,18 @@ public class ConwayRuleTest {
     private ConwaysRule rule;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         rule = new ConwaysRule();
     }
 
     @Test
-    public void liveCellWithFewerThanTwoLiveNeighborsDies(){
+    public void liveCellWithFewerThanTwoLiveNeighborsDies() {
 
         assertThat(rule.apply(ALIVE, 1)).isEqualTo(DEAD);
     }
 
     @Test
-    public void  liveCellWithTwoLiveNeighborLives(){
+    public void liveCellWithTwoLiveNeighborLives() {
 
         CellState actual = rule.apply(ALIVE, 2);
 
@@ -32,7 +32,7 @@ public class ConwayRuleTest {
     }
 
     @Test
-    public void  liveCellWithThreeLiveNeighborLives(){
+    public void liveCellWithThreeLiveNeighborLives() {
 
         CellState actual = rule.apply(ALIVE, 3);
 
@@ -40,7 +40,7 @@ public class ConwayRuleTest {
     }
 
     @Test
-    public void  liveCellWithMoreThanThreeLiveNeighborDies(){
+    public void liveCellWithMoreThanThreeLiveNeighborDies() {
 
         CellState actual = rule.apply(ALIVE, 4);
 
@@ -48,7 +48,7 @@ public class ConwayRuleTest {
     }
 
     @Test
-    public void  deadCellWithThreeLiveNeighborLives(){
+    public void deadCellWithThreeLiveNeighborLives() {
 
         CellState actual = rule.apply(DEAD, 3);
 

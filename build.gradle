@@ -3,10 +3,14 @@ apply plugin: 'java'
 apply plugin: 'idea'
 
 repositories {
-    mavenCentral()
     maven {
         url 'http://www.nexus.ford.com/repository/external-proxy-group/'
     }
+    maven {
+        url 'http://www.nexus.ford.com/repository/software_craftsman_public_snapshot_repository/'
+    }
+  
+
 }
 
 dependencies {
@@ -15,5 +19,5 @@ dependencies {
     testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
     testImplementation 'org.assertj:assertj-core:3.12.0'
     implementation 'com.ford.swc:game-of-life-performance-prod:0.0.1-SNAPSHOT'
-    testImplementation 'com.ford.swc:game-of-life-performance-testing:0.0.1-SNAPSHOT'
+    implementation 'com.ford.swc:game-of-life-performance-testing:0.0.1-SNAPSHOT'
 }

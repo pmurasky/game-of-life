@@ -2,10 +2,11 @@ package murasky.gameoflife.cell;
 
 import murasky.gameoflife.board.Coordinate;
 import murasky.gameoflife.board.OffsetCoordinate;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 class CellIdentifierTest {
 
@@ -16,7 +17,7 @@ class CellIdentifierTest {
         Coordinate coordinate = new Coordinate(0,0);
         List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
 
-        Assertions.assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(0,1),
+        assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(0,1),
                 new OffsetCoordinate(1,0), new OffsetCoordinate(1,1));
     }
 
@@ -25,7 +26,7 @@ class CellIdentifierTest {
         Coordinate coordinate = new Coordinate(0,1);
         List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
 
-        Assertions.assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(0,-1),
+        assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(0,-1),
                 new OffsetCoordinate(0,1), new OffsetCoordinate(1,-1), new OffsetCoordinate(1,0),
                 new OffsetCoordinate(1,1));
     }
@@ -35,7 +36,7 @@ class CellIdentifierTest {
         Coordinate coordinate = new Coordinate(0,2);
         List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
 
-        Assertions.assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(0,-1),
+        assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(0,-1),
                 new OffsetCoordinate(1,-1), new OffsetCoordinate(1,0));
     }
 
@@ -44,7 +45,7 @@ class CellIdentifierTest {
         Coordinate coordinate = new Coordinate(1,1);
         List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
 
-        Assertions.assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(-1,-1),
+        assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(-1,-1),
                 new OffsetCoordinate(-1,0), new OffsetCoordinate(-1,1),
                 new OffsetCoordinate(0,-1), new OffsetCoordinate(0,1), new OffsetCoordinate(1,-1),
                 new OffsetCoordinate(1,0), new OffsetCoordinate(1,1));
@@ -55,7 +56,7 @@ class CellIdentifierTest {
         Coordinate coordinate = new Coordinate(1,0);
         List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
 
-        Assertions.assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(-1,0),
+        assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(-1,0),
                 new OffsetCoordinate(-1,1), new OffsetCoordinate(0,1), new OffsetCoordinate(1,0),
                 new OffsetCoordinate(1,1));
     }
@@ -65,7 +66,7 @@ class CellIdentifierTest {
         Coordinate coordinate = new Coordinate(1,2);
         List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
 
-        Assertions.assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(-1,0),
+        assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(-1,0),
                 new OffsetCoordinate(-1,-1), new OffsetCoordinate(0,-1), new OffsetCoordinate(1,-1),
                 new OffsetCoordinate(1,0));
     }
@@ -75,7 +76,7 @@ class CellIdentifierTest {
         Coordinate coordinate = new Coordinate(2,0);
         List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
 
-        Assertions.assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(-1,0),
+        assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(-1,0),
                 new OffsetCoordinate(-1,1), new OffsetCoordinate(0,1));
     }
 
@@ -84,7 +85,7 @@ class CellIdentifierTest {
         Coordinate coordinate = new Coordinate(2,1);
         List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
 
-        Assertions.assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(-1,-1),
+        assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(-1,-1),
                 new OffsetCoordinate(-1,0), new OffsetCoordinate(-1,1), new OffsetCoordinate(0,-1),
                 new OffsetCoordinate(0,1));
     }
@@ -94,7 +95,7 @@ class CellIdentifierTest {
         Coordinate coordinate = new Coordinate(2,2);
         List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
 
-        Assertions.assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(0,-1),
+        assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(0,-1),
                 new OffsetCoordinate(-1,-1), new OffsetCoordinate(-1,0));
     }
 }
