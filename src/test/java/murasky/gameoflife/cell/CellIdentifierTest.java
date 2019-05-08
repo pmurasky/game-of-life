@@ -88,4 +88,13 @@ class CellIdentifierTest {
                 new OffsetCoordinate(-1,0), new OffsetCoordinate(-1,1), new OffsetCoordinate(0,-1),
                 new OffsetCoordinate(0,1));
     }
+
+    @Test
+    public void verifyCoordinateNeighborsForBottomRightCell(){
+        Coordinate coordinate = new Coordinate(2,2);
+        List<OffsetCoordinate> offsetCoordinates = cellIdentifier.findNeighborsOffsetCoordinates(coordinate, 3);
+
+        Assertions.assertThat(offsetCoordinates).containsExactlyInAnyOrder(new OffsetCoordinate(0,-1),
+                new OffsetCoordinate(-1,-1), new OffsetCoordinate(-1,0));
+    }
 }

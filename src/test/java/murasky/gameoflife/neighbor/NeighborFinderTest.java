@@ -83,7 +83,7 @@ class NeighborFinderTest {
     }
 
     @Test
-    public void findNeighborsForBottomRightCellOf3x3Board(){
+    public void findNeighborsForBottomLeftCellOf3x3Board(){
         Board board = boardCreator.create(ALIVE, DEAD, DEAD,
                                           DEAD, ALIVE, ALIVE,
                                           DEAD, DEAD, ALIVE);
@@ -102,6 +102,17 @@ class NeighborFinderTest {
         int actual = neighborFinder.findLiveNeighborCount(board, new Coordinate(2,1));
 
         assertThat(actual).isEqualTo(3);
+    }
+
+    @Test
+    public void findNeighborsForBottomRightCellOf3x3Board(){
+        Board board = boardCreator.create(ALIVE, DEAD, DEAD,
+                                          DEAD, ALIVE, ALIVE,
+                                          DEAD, DEAD, ALIVE);
+
+        int actual = neighborFinder.findLiveNeighborCount(board, new Coordinate(2,2));
+
+        assertThat(actual).isEqualTo(2);
     }
 
 }

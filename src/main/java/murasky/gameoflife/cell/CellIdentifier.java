@@ -14,7 +14,7 @@ public class CellIdentifier {
             return Arrays.asList(new OffsetCoordinate(0,1),
                     new OffsetCoordinate(1,0), new OffsetCoordinate(1,1));
         }
-        if (isTopRightCorner(coordinate, lengthOfSide)){
+        if (isCellTopRightCorner(coordinate, lengthOfSide)){
             System.out.println("RightTopCorner");
             return  Arrays.asList(new OffsetCoordinate(0,-1),
                     new OffsetCoordinate(1,-1), new OffsetCoordinate(1,0));
@@ -42,33 +42,44 @@ public class CellIdentifier {
             return Arrays.asList(new OffsetCoordinate(-1,0),
                     new OffsetCoordinate(-1,-1), new OffsetCoordinate(0,-1), new OffsetCoordinate(1,-1),
                     new OffsetCoordinate(1,0));
-        } if (isLeftBottomCorner(coordinate, lengthOfSide)){
+        } if (isCellLeftBottomCorner(coordinate, lengthOfSide)){
+            System.out.println("Left Bottom Corner");
             return Arrays.asList(new OffsetCoordinate(-1,0),
                     new OffsetCoordinate(-1,1), new OffsetCoordinate(0,1));
+
         } if(isCellBottomEdge(coordinate, lengthOfSide)){
+            System.out.println("Bottom middle");
             return Arrays.asList(new OffsetCoordinate(-1,-1),
                     new OffsetCoordinate(-1,0), new OffsetCoordinate(-1,1), new OffsetCoordinate(0,-1),
                     new OffsetCoordinate(0,1));
+        } if (isCellBottomRightCorner(coordinate, lengthOfSide)){
+            System.out.println("Right Bottom Corner");
+            return Arrays.asList(new OffsetCoordinate(0,-1),
+                    new OffsetCoordinate(-1,-1), new OffsetCoordinate(-1,0));
         }
 
 
         return null;
     }
 
-    private boolean isCellBottomEdge(Coordinate coordinate, int lengthOfSide) {
-        return coordinate.getX() == lengthOfSide-1 && (coordinate.getY() > 0 && coordinate.getY() < lengthOfSide);
+    private boolean isCellBottomRightCorner(Coordinate coordinate, int lengthOfSide) {
+        return coordinate.getX() == lengthOfSide-1 && coordinate.getY() == lengthOfSide -1;
     }
 
-    private boolean isLeftBottomCorner(Coordinate coordinate, int lengthOfSide) {
+    private boolean isCellBottomEdge(Coordinate coordinate, int lengthOfSide) {
+        return coordinate.getX() == lengthOfSide-1 && (coordinate.getY() > 0 && coordinate.getY() < lengthOfSide-1);
+    }
+
+    private boolean isCellLeftBottomCorner(Coordinate coordinate, int lengthOfSide) {
         return coordinate.getX() == lengthOfSide-1 && coordinate.getY() == 0;
     }
 
-    private boolean isTopRightCorner(Coordinate coordinate, int lengthOfSide) {
+    private boolean isCellTopRightCorner(Coordinate coordinate, int lengthOfSide) {
         return coordinate.getX() == 0 && coordinate.getY() == lengthOfSide-1;
     }
 
     private boolean isRightEdge(Coordinate coordinate, int lengthOfSide) {
-        return (coordinate.getX() > 0 && coordinate.getX() < lengthOfSide) && coordinate.getY() == lengthOfSide-1;
+        return (coordinate.getX() > 0 && coordinate.getX() < lengthOfSide-1) && coordinate.getY() == lengthOfSide-1;
     }
 
     private boolean isLeftEdge(Coordinate coordinate, int lengthOfSide) {
