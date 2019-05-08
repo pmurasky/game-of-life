@@ -1,6 +1,6 @@
 package murasky.gameoflife.board;
 
-import murasky.gameoflife.CellState;
+import murasky.gameoflife.cell.CellState;
 
 public class BoardCreator {
     public Board create(CellState... cellStates) {

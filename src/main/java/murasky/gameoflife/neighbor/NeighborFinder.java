@@ -1,12 +1,11 @@
 package murasky.gameoflife.neighbor;
 
-import murasky.gameoflife.CellState;
+import murasky.gameoflife.cell.CellState;
 import murasky.gameoflife.board.Board;
 import murasky.gameoflife.board.Coordinate;
 import murasky.gameoflife.board.OffsetCoordinate;
 import murasky.gameoflife.cell.CellIdentifier;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class NeighborFinder {

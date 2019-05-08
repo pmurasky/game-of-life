@@ -1,4 +1,4 @@
-package murasky.gameoflife;
+package murasky.gameoflife.cell;
 
 public enum CellState {
 

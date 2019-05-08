@@ -1,9 +1,9 @@
 package murasky.gameoflife.rule;
 
-import murasky.gameoflife.CellState;
+import murasky.gameoflife.cell.CellState;
 
-import static murasky.gameoflife.CellState.ALIVE;
-import static murasky.gameoflife.CellState.DEAD;
+import static murasky.gameoflife.cell.CellState.ALIVE;
+import static murasky.gameoflife.cell.CellState.DEAD;
 
 public class ConwaysRule {
 
